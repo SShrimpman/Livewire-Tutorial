@@ -9,6 +9,8 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="antialiased">
 
@@ -16,6 +18,8 @@
         <livewire:clicker /> --}}
 
         {{-- Isto é a maneira como eu chamo um component com o livewire --}}
-        @livewire('clicker')
+        <div class="bg-gray-900 h-screen">
+            @livewire('clicker')
+        </div>
     </body>
 </html>
