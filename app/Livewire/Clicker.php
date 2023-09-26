@@ -7,27 +7,26 @@ use Livewire\Component;
 
 class Clicker extends Component
 {
-    public $username = "testuser";
+    public $name;
+    public $email;
+    public $password;
 
     public function createNewUser() {
         User::create([
-            'name' => 'test user 2',
-            'email' => 'test2@test.com',
-            'password' => 'test'
+            'name' => $this->name,
+            'email' => $this->email,
+            'password' => $this->password
         ]);
     }
 
     public function render()
     {
-        $title = "Test";
-
         $users = User::all();
 
         // This is another way of sending the variables i create here to the views
         // return view('livewire.clicker', compact('title'));
 
         return view('livewire.clicker', [
-            'title' => $title,
             'users' => $users
         ]);
     }
