@@ -31,4 +31,6 @@
     @foreach ($users as $user)
         <h3 class="text-white">{{ $user->name }}</h3>
     @endforeach
+
+    {{ $users->links() }}
 </div>
