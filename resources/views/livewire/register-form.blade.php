@@ -39,12 +39,28 @@
                                     <img class="rounded w-10 h-10 mt-5 block" src="{{ $image->temporaryUrl() }}" alt="">
                                 @endif
 
+                                {{-- Este wire:target é para apenas mostrar este html apenas quando o input que recebe a 'imagem' está em loading, 
+                                o target também pode funcionar com uma função, por exemplo a função 'create' que tenho no controller/component --}}
                                 <div wire:loading wire:target='image'>
                                     <span class="text-green-500">Uploading...</span>
                                 </div>
 
+                                 <div wire:loading.delay> {{-- Este delay faz com que apareça apenas quando está em loading, tenho que ter "sleep()" definido no método do controller/component --}}
+                                    <span class="text-green-500">Sending...</span>
+                                </div>
+
                         </div>
-                        <button type="submit" class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Create</button>
+
+                        {{-- Este remove faz com que seja removido da view enquanto está em loading --}}
+                        {{-- <button wire:loading.remove type="submit"></button> --}}
+
+                        {{-- Este attr é para atribuir o atributo 'disabled' enquanto está em loading --}}
+                        {{-- <button wire:loading.attr='disabled' type="submit"></button> --}}
+
+                        {{-- Este class aplica a class do tailwind enquanto está em loading, por alguma razão, se tiver alguma class aplicada normalmente, tenho que a remover
+                        e só depois é que a posso aplicar, se usar o Tailwind por CDN, esse problema já não acontece, apenas aplico a classe diretamente no loading e ela é logo
+                        aplicada sem eu ter que remover a outra que já tinha sido aplicada --}}
+                        <button wire:loading.class.remove='bg-teal-500' wire:loading.class='bg-blue-500' type="submit" class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Create</button>
                             @if (session('success'))
                                 <span class="text-green-500 text-xs mt-3 block">{{ session('success') }}</span>
                             @endif
