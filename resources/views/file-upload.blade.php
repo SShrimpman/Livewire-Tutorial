@@ -10,9 +10,9 @@
 </head>
 
 <body class="dark:bg-gray-900">
-    <div id="content" class="grid grid-cols-2">
+    <div id="content">
         @livewire('userlist')
-        @livewire('registerform')
+        {{-- @livewire('registerform') --}}
     </div>
 </body>
 
