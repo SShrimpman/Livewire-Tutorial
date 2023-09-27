@@ -17,8 +17,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// Route::get('/', function () {
+//     return view('crud');
+// });
+
 Route::get('/', function () {
-    return view('crud');
+    return view('file-upload');
 });
 
 Auth::routes();
