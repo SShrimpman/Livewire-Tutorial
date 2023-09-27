@@ -10,10 +10,10 @@
 </head>
 
 <body class="dark:bg-gray-900">
-    <div id="content" class="mx-auto" style="max-width:500px;">
+    <div id="content" class="grid grid-cols-2">
+        @livewire('userlist')
         @livewire('registerform')
     </div>
-
 </body>
 
 </html>

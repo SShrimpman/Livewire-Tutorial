@@ -1,6 +1,6 @@
 <div>
     <div class="container content py-6 mx-auto shadow-2xl">
-        <div class="mx-auto">
+        <div class="mx-auto" style="max-width:500px;">
             <div id="create-form" class="hover:shadow p-6 bg-white dark:bg-gray-900 border-blue-500 border-t-2">
                 <div class="flex ">
                     <h2 class="font-bold text-lg text-gray-800 dark:text-white mb-5">Create New Account</h2>
@@ -50,6 +50,11 @@
                                 </div>
 
                         </div>
+
+                        {{-- Em Alpine.js eu posso dar update da seguinte forma:
+                            <button type="button" @click="$dispatch('user-created')">Reload List</button>
+                            Assim não tenho que estar a criar um método no controller/component --}}
+                        <button wire:click.prevent='ReloadList' class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Reload List</button>
 
                         {{-- Este remove faz com que seja removido da view enquanto está em loading --}}
                         {{-- <button wire:loading.remove type="submit"></button> --}}
