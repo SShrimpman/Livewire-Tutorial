@@ -15,9 +15,9 @@ use App\Livewire\UsersPage;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', HomePage::class);
-Route::get('/users/{user}', UsersPage::class);
+// Route::get('/', HomePage::class);
+// Route::get('/users/{user}', UsersPage::class);

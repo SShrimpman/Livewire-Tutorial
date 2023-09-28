@@ -41,13 +41,18 @@
         {{-- <div id="content">
             @livewire('registerform')
         </div> --}}
-        <div class="flex">
+        
+        {{-- <div class="flex">
             <div class="w-2/4 mx-auto pt-10">
-                {{-- Com o lazy é uma forma de eu fazer lazy loading se tiver definido "sleep()" no meu controller/component --}}
-                {{-- @livewire('userlist', ['lazy' => true]) --}}
+                Com o lazy é uma forma de eu fazer lazy loading se tiver definido "sleep()" no meu controller/component
+                @livewire('userlist', ['lazy' => true])
                 <livewire:user-list search="prof">
-                {{-- Também posso usar a sintaxe antiga : @livewire('user-list', ['search'=>'prof']) --}}
+                Também posso usar a sintaxe antiga : @livewire('user-list', ['search'=>'prof'])
             </div>
+        </div> --}}
+
+        <div>
+            <livewire:contact-us >
         </div>
     </body>
 </html>
