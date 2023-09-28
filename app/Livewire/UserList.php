@@ -21,8 +21,8 @@ class UserList extends Component
     //     return view('placeholder');
     // }
 
-    public function update() {
-        
+    public function mount($search) {
+        $this->search = $search;
     }
 
     public function render()

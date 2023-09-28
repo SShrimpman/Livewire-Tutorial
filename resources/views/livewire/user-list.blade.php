@@ -47,7 +47,9 @@
     <div class="container content py-28 mx-auto">
         <div class="w-[500px] mx-auto mb-3">
             <div class="text-white text-3xl mb-2">Users List</div>
-            {{--  Com o .blur, evito imensas requests ao servidor (1 por cada caractér introduzido) e só faço 1 request após clicar fora do input, quando clico nele e escrevo
+            {{--  Com o .live ele vai fazer um request a cada caractér introduzido no input
+                    wire:model.live='search'
+                  Com o .blur, evito imensas requests ao servidor (1 por cada caractér introduzido) e só faço 1 request após clicar fora do input, quando clico nele e escrevo
                   ele está ativo, quando clico fora fica 'desativo' e é aí que a call é feita
                     wire:model.live.blur='search'
                   Com o .debounce eu espero que o utilizador pare de escrever para fazer o request, e posso definir o tempo de espera antes de fazer o request quando para de 
@@ -56,8 +58,8 @@
                   O .throttle vai fazeer um request a cada letra na mesma, no entanto se definir um tempo/delay, esse tempo vai ser o intervalo entre cada request, neste caso
                   eu faço um request quando escrevo um caractér e quando escrevo outro, o request só vai acontecer após 300ms
                     wire:model.live.throttle.300ms='search'--}}
-            <input wire:model.live='search' type="text" placeholder="Search..." class="w-full text-sm rounded p-1.5 bg-gray-300">
-            <button wire:click='update' class="mt-3 px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Update</button>
+            <input wire:model.live.debounce.500ms='search' type="text" placeholder="Search..." class="w-full text-sm rounded p-1.5 bg-gray-300">
+            {{-- <button wire:click='update' class="mt-3 px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Update</button> --}}
         </div>
         <div class="bg-gray-700 mx-auto w-[500px] rounded">
             <div class="grid grid-cols-2 gap-3 p-3 text-white">
