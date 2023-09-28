@@ -63,7 +63,8 @@
         </div>
         <div class="bg-gray-700 mx-auto w-[500px] rounded">
             <div class="grid grid-cols-2 gap-3 p-3 text-white">
-                @foreach ($users as $user)
+                {{-- @foreach ($users as $user) --}}
+                @foreach ($this->users as $user)
                     <div class="py-5">
                         <div class="text-xl font-bold">{{ $user->name }}</div>
                         <div class="text-gray-200 text-sm">{{ $user->email }}</div>

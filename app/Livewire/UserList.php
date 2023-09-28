@@ -6,6 +6,7 @@ use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use Livewire\WithPagination;
+use Livewire\Attributes\Computed;
 
 class UserList extends Component
 {
@@ -25,6 +26,14 @@ class UserList extends Component
         $this->search = $search;
     }
 
+    // #[Computed(persist:true,seconds:3600)] Isto é para persistir e manter em cache e não alterar aquilo que vejo inicialmente quando o componente é montado na view
+    #[Computed()]
+    public function users() {
+        return User::latest()
+        ->where('name', 'like', "%{$this->search}%")
+        ->paginate(5);
+    }
+
     public function render()
     {
         
@@ -40,9 +49,9 @@ class UserList extends Component
         // ]);
 
         return view('livewire.user-list', [
-            'users' => User::latest()
-            ->where('name', 'like', "%{$this->search}%")
-            ->paginate(5),
+            // 'users' => User::latest()
+            // ->where('name', 'like', "%{$this->search}%")
+            // ->paginate(5),
         ]);
     }
 }
