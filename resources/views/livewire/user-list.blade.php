@@ -7,7 +7,7 @@
     <div wire:poll.visible ></div> --}}
 <div wire:poll>
     <div class="container content py-28 mx-auto">
-        <div class="shadow-2xl">
+        {{-- <div class="shadow-2xl">
             <div class="grid grid-cols-3 mx-auto gap-3 bg-gray-700 p-3 rounded-t-lg text-white">
                 <div>Name</div>
                 <div>Email</div>
@@ -20,10 +20,27 @@
                 <div>{{ $user->created_at }}</div>
                 @endforeach
             </div>
+        </div> --}}
+        
+        <div class="flex items-center w-[500px] mx-auto mb-2 space-x-2">
+            <div class="text-white text-3xl">Users List</div>
+            <div class="px-3 py-1 bg-teal-500 text-white font-semibold rounded-3xl hover:bg-teal-600">{{ $count }}</div>
         </div>
-
-        <div class="mt-2">
+        <div class="bg-gray-700 mx-auto w-[500px] rounded">
+            <div class="grid grid-cols-2 gap-3 p-3 text-white">
+                @foreach ($users as $user)
+                <div class="py-5">
+                    <div class="text-xl font-bold">{{ $user->name }}</div>
+                    <div class="text-gray-200 text-sm">{{ $user->email }}</div>
+                </div>
+                <div class="flex justify-end items-center">
+                    <button wire:click='update' class="mt-3 px-4 py-2 bg-teal-500 text-white font-semibold rounded-3xl hover:bg-teal-600">View</button>
+                </div>
+                @endforeach
+            </div>
+        </div>
+            {{-- <div class="mt-2">
             {{ $users->links() }}
-        </div>
+        </div> --}}
     </div>
 </div>

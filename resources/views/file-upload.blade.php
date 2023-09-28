@@ -10,9 +10,13 @@
 </head>
 
 <body class="dark:bg-gray-900">
-    <div id="content">
-        @livewire('userlist')
-        {{-- @livewire('registerform') --}}
+    {{-- <div id="content">
+        @livewire('registerform')
+    </div> --}}
+    <div class="flex">
+        <div class="w-2/4 mx-auto pt-10">
+            @livewire('userlist', ['lazy' => true])
+        </div>
     </div>
 </body>
 
