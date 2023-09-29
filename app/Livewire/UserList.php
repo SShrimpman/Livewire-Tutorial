@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 use Livewire\Attributes\Computed;
 
@@ -12,7 +13,11 @@ class UserList extends Component
 {
     use WithPagination;
 
-    public $search;
+    // #[Url( as : 's' )] Posso definir o nome que aparece no url, em vez de aparecer o 'search=test' que tinha definido, com isto aparecer 's=test'
+    // #[Url( keep : true )] Com o keep o meu url vai ter sempre o '?search=' até mesmo quando ainda nem procurei nada
+    #[Url( history: true )] // Com o history a página já não dá reload se eu voltar para a anterior ou posterior, armazena os resultados e dá display
+    public $search = '';
+
     public User $selectedUser;
 
     // #[On('user-created')]
