@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
         {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        {{-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
         @vite('resources/css/app.css')
-        @livewireStyles
+        {{-- @livewireStyles --}}
     </head>
     {{-- <body class="bg-gray-900"> --}}
     <body class="bg-gray-900 p-5">
@@ -60,7 +60,7 @@
         </div> --}}
 
 
-        <div class="flex">
+        {{-- <div class="flex">
             <div class="w-2/4 mx-auto pt-10">
                 <x-modal name="1" title="modal 1">
                     <x-slot:body>
@@ -78,7 +78,7 @@
 
                 <button x-data @click="$dispatch('open-modal', { name: '2' })" class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded">Modal 2</button>
             </div>
-        </div>
+        </div> --}}
 
         <livewire:user-list>
 
