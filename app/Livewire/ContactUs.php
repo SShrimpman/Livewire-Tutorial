@@ -10,17 +10,39 @@ use App\Livewire\Forms\ContactUsForm;
 
 class ContactUs extends Component
 {
-    public ContactUsForm $form;
+    use WithFileUploads;
+
+    // public ContactUsForm $form;
+
+    #[Rule('required|email|max:255')]
+    public $email;
+
+    #[Rule('required|min:3|max:255')]
+    public $subject;
+    
+    #[Rule('required|min:3|max:255')]
+    public $message;
+
+    #[Rule('required')]
+    #[Rule(['images.*'=>'image|max:2048'])]
+    public $images;
 
     public function submitForm() {
-        $this->form->validate();
+        // $this->form->validate();
+        $this->validate();
 
+        if(is_array($this->images)) {
+            foreach($this->images as $image) {
+                $image->store('images', 'public');
+            }
+        }
         
-        // sending email
-        $this->form->sendEmail();
+        // // sending email
+        // $this->form->sendEmail();
         session()->flash('success', 'form submitted!');
 
-        $this->form->reset();
+        $this->reset();
+        // $this->form->reset();
     }
 
     public function render()

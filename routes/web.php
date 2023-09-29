@@ -15,17 +15,17 @@ use App\Livewire\UsersPage;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/', function () {
 //     return view('crud');
 // });
 
-Route::get('/', function () {
-    return view('data-table');
-});
+// Route::get('/', function () {
+//     return view('data-table');
+// });
 
 // Route::get('/', HomePage::class);
 // Route::get('/users/{user}', UsersPage::class);

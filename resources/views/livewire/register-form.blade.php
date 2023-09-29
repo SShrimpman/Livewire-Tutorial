@@ -48,7 +48,6 @@
                                  <div wire:loading.delay> {{-- Este delay faz com que apareça apenas quando está em loading, tenho que ter "sleep()" definido no método do controller/component --}}
                                     <span class="text-green-500">Sending...</span>
                                 </div>
-
                         </div>
 
                         {{-- Em Alpine.js eu posso dar update da seguinte forma:

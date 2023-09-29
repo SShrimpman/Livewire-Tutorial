@@ -9,8 +9,7 @@
         @vite('resources/css/app.css')
         @livewireStyles
     </head>
-    {{-- <body class="bg-gray-900"> --}}
-    <body class="bg-gray-900 p-5">
+    <body class="bg-gray-900">
 
         {{-- Isto é outra maneira de chamar um component com o livewire
         <livewire:clicker /> --}}
@@ -34,9 +33,9 @@
             </div>
         </div> --}}
 
-        {{-- <div>
-            <livewire:contact-us >
-        </div> --}}
+        <div>
+            <livewire:contact-us />
+        </div>
 
 
         {{-- <div class="flex">
@@ -59,7 +58,7 @@
             </div>
         </div> --}}
 
-        <livewire:user-list>
+        {{-- <livewire:user-list> --}}
 
         @livewireScripts
     </body>
