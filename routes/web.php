@@ -15,8 +15,16 @@ use App\Livewire\UsersPage;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/', function () {
+//     return view('crud');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('data-table');
 });
 
 // Route::get('/', HomePage::class);
