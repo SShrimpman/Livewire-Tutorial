@@ -1,5 +1,5 @@
 <div>
-    <div class="container content py-6 mx-auto shadow-2xl">
+    {{-- <div class="container content py-6 mx-auto shadow-2xl"> --}}
         <div class="mx-auto" style="max-width:500px;">
             <div id="create-form" class="hover:shadow p-6 bg-white dark:bg-gray-900 border-blue-500 border-t-2">
                 <div class="flex ">
@@ -73,5 +73,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 </div>
