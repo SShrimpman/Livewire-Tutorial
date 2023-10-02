@@ -14,7 +14,8 @@ class ContactUs extends Component
 
     // public ContactUsForm $form;
 
-    #[Rule('required|email|max:255')]
+    // Este 'as :' é para substituir o nome que vai aparecer em baixo, em vez de dizer "The email field is required" agora diz "The company email field is required"
+    #[Rule('required|email|max:255', as: 'company email')]
     public $email;
 
     #[Rule('required|min:3|max:255')]
