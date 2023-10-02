@@ -53,7 +53,7 @@
                         {{-- Em Alpine.js eu posso dar update da seguinte forma:
                             <button type="button" @click="$dispatch('user-created')">Reload List</button>
                             Assim não tenho que estar a criar um método no controller/component --}}
-                        <button wire:click.prevent='ReloadList' class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Reload List</button>
+                        {{-- <button wire:click.prevent='ReloadList' class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Reload List</button> --}}
 
                         {{-- Este remove faz com que seja removido da view enquanto está em loading --}}
                         {{-- <button wire:loading.remove type="submit"></button> --}}
@@ -64,7 +64,9 @@
                         {{-- Este class aplica a class do tailwind enquanto está em loading, por alguma razão, se tiver alguma class aplicada normalmente, tenho que a remover
                         e só depois é que a posso aplicar, se usar o Tailwind por CDN, esse problema já não acontece, apenas aplico a classe diretamente no loading e ela é logo
                         aplicada sem eu ter que remover a outra que já tinha sido aplicada --}}
-                        <button wire:loading.class.remove='bg-teal-500' wire:loading.class='bg-blue-500' type="submit" class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">Create</button>
+                        <button wire:loading.class.remove='bg-teal-500' wire:loading.class='bg-blue-500' type="submit" class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-teal-600">
+                            Create +
+                        </button>
                             @if (session('success'))
                                 <span class="text-green-500 text-xs mt-3 block">{{ session('success') }}</span>
                             @endif

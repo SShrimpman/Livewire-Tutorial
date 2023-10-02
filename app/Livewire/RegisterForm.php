@@ -24,6 +24,16 @@ class RegisterForm extends Component
     #[Rule('nullable|sometimes|image|max:1024')]
     public $image;
 
+    // public function updated($property) {
+    //     if ($property === 'name') {
+    //         $this->name = strtoupper($this->name);
+    //     }
+    // }
+
+    public function updatedName() {
+        $this->name = strtoupper($this->name);
+    }
+
     public function create() {
         sleep(1);
 

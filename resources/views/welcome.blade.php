@@ -19,9 +19,9 @@
             @livewire('clicker')
         </div> --}}
 
-        {{-- <div id="content">
+        <div id="content" class="mt-28">
             @livewire('registerform')
-        </div> --}}
+        </div>
         
         {{-- <div class="flex">
             <div class="w-2/4 mx-auto pt-10">
@@ -33,9 +33,9 @@
             </div>
         </div> --}}
 
-        <div>
+        {{-- <div>
             <livewire:contact-us />
-        </div>
+        </div> --}}
 
 
         {{-- <div class="flex">
